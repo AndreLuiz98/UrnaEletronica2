@@ -27,14 +27,14 @@ public class ApuracaoDAO extends GenericDAO<Integer, Apuracao>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public Apuracao getById(Integer pk) {
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Apuracao apuracao = null;
 
 		try {
-			
+
 			session.beginTransaction();
 			apuracao = (Apuracao) session.get(Apuracao.class, pk);
 			session.getTransaction().commit();

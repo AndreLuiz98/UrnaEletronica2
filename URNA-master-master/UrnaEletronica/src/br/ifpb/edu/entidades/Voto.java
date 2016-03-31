@@ -18,24 +18,24 @@ import javax.persistence.Table;
 @Table(name = "tb_voto")
 @NamedQuery(name = "Voto.getAll", query = "from Voto")
 public class Voto {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_voto")
 	private Integer id;
-	
+
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_eleitor")
 	private Eleitor eleitor;
-	
+
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_candidato")
 	private Candidato candidato;
-	
+
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_urna")
 	private UrnaEletronica urnaEletronica;
-	
+
 	@Column(name = "data")
 	private Date data;
 
@@ -78,7 +78,7 @@ public class Voto {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	
-	
+
+
 
 }

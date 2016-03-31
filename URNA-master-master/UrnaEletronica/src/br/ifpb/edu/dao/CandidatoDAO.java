@@ -27,13 +27,14 @@ public class CandidatoDAO extends GenericDAO<Integer, Candidato>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public Candidato getById(Integer pk) {
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Candidato candidato = null;
 
 		try {
+			
 			session.beginTransaction();
 			candidato = (Candidato) session.get(Candidato.class, pk);
 			session.getTransaction().commit();
